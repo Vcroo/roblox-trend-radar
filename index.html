@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Roblox Trend Radar</title>
+  <meta name="description" content="Live Roblox and Steam trends, genres, audience and game ideas for Roblox creators. Updated automatically.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..600&family=Outfit:wght@400..700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero" id="top">
+      <span class="eyebrow">Live trend report · Roblox creators</span>
+      <h1>Roblox Trend Radar</h1>
+      <p class="takeaway" id="takeaway">Loading the latest numbers…</p>
+      <div class="chips">
+        <span class="chip"><span class="live-dot"></span><span id="updated">Updating…</span></span>
+        <span class="chip">Roblox &amp; Steam update automatically</span>
+        <span class="chip" id="reviewed">TikTok &amp; audience reviewed by hand</span>
+      </div>
+    </header>
+
+    <nav class="tabs" role="tablist" aria-label="Sections">
+      <button role="tab" data-page="overview" aria-selected="true">Overview</button>
+      <button role="tab" data-page="roblox" aria-selected="false">Roblox live</button>
+      <button role="tab" data-page="rising" aria-selected="false">Rising</button>
+      <button role="tab" data-page="genres" aria-selected="false">Genres</button>
+      <button role="tab" data-page="steam" aria-selected="false">Steam</button>
+      <button role="tab" data-page="social" aria-selected="false">TikTok &amp; social</button>
+      <button role="tab" data-page="audience" aria-selected="false">Audience</button>
+      <button role="tab" data-page="ideas" aria-selected="false">Ideas</button>
+    </nav>
+
+    <p class="alert" id="alert" hidden></p>
+
+    <!-- Overview -->
+    <section class="page" id="overview" role="tabpanel">
+      <div class="kpis">
+        <div class="card kpi">
+          <span class="label">Playing the top Roblox games now</span>
+          <span class="big" id="k-total">—</span>
+          <span class="foot" id="k-total-foot"></span>
+          <div class="kpi-spark" id="k-total-spark"></div>
+        </div>
+        <div class="card kpi">
+          <span class="label">Most played right now</span>
+          <span class="big word" id="k-top">—</span>
+          <span class="foot" id="k-top-foot"></span>
+        </div>
+        <div class="card kpi">
+          <span class="label">Hottest genre</span>
+          <span class="big word" id="k-genre">—</span>
+          <span class="foot" id="k-genre-foot"></span>
+        </div>
+        <div class="card kpi">
+          <span class="label">Best idea right now</span>
+          <span class="big word" id="k-idea">—</span>
+          <span class="foot" id="k-idea-foot"></span>
+        </div>
+      </div>
+      <div class="split">
+        <div class="card">
+          <h3>Rising fastest</h3>
+          <p class="note">Trending and up-and-coming Roblox games, by player growth over the last 24 hours.</p>
+          <div class="rank" id="ov-rising"></div>
+        </div>
+        <div class="card">
+          <h3>Genres by chance score</h3>
+          <p class="note">Mixes players, buzz and how much room is left. See the Genres tab.</p>
+          <div class="rank" id="ov-genres"></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>What makes people play</h3>
+        <div class="drivers">
+          <div class="driver"><b>A clear goal</b><span>Understood in five seconds: hatch, steal, grow, escape.</span></div>
+          <div class="driver"><b>Other players</b><span>Steal from them, protect against them, or fail together.</span></div>
+          <div class="driver"><b>Collecting</b><span>Rare pets and items worth showing off.</span></div>
+          <div class="driver"><b>Visible progress</b><span>A bigger base, more speed, better gear.</span></div>
+          <div class="driver"><b>Clip-worthy moments</b><span>Every TikTok clip is free advertising.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roblox live -->
+    <section class="page" id="roblox" role="tabpanel" hidden>
+      <div class="sec-title">
+        <h2>Most played on Roblox</h2>
+        <p>The top 50 games by players right now. Growth needs a day or a week of history before it appears.</p>
+      </div>
+      <div class="card">
+        <div class="toolbar"><input type="search" id="roblox-search" placeholder="Search games or genres" aria-label="Search Roblox games"></div>
+        <div class="scroll"><table class="sortable" id="roblox-table"></table></div>
+      </div>
+    </section>
+
+    <!-- Rising -->
+    <section class="page" id="rising" role="tabpanel" hidden>
+      <div class="sec-title">
+        <h2>Rising games</h2>
+        <p>Games on Roblox's Top Trending and Up-and-Coming lists. "New" means it came out in the last 4 months.</p>
+      </div>
+      <div class="cards" id="rising-cards"></div>
+    </section>
+
+    <!-- Genres -->
+    <section class="page" id="genres" role="tabpanel" hidden>
+      <div class="sec-title">
+        <h2>Genres</h2>
+        <p>Chance score = 35% players + 40% buzz (games on the trending lists) + 25% room (how little the biggest game dominates). Each part is scored 0 to 10.</p>
+      </div>
+      <div class="card">
+        <div class="scroll"><table class="sortable" id="genre-table"></table></div>
+      </div>
+    </section>
+
+    <!-- Steam -->
+    <section class="page" id="steam" role="tabpanel" hidden>
+      <div class="sec-title">
+        <h2>Steam right now</h2>
+        <p>The 60 most played Steam games. Rising games and genres here often show up on Roblox a few weeks later.</p>
+      </div>
+      <div class="split">
+        <div class="card">
+          <h3>Steam genres in the top 60</h3>
+          <p class="note">Players in each genre. A game can have several genres.</p>
+          <div class="rank" id="steam-genres"></div>
+        </div>
+        <div class="card">
+          <h3>Rising on Steam</h3>
+          <p class="note">Biggest player growth over 24 hours.</p>
+          <div class="rank" id="steam-rising"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="toolbar"><input type="search" id="steam-search" placeholder="Search games or genres" aria-label="Search Steam games"></div>
+        <div class="scroll"><table class="sortable" id="steam-table"></table></div>
+      </div>
+    </section>
+
+    <!-- Social -->
+    <section class="page" id="social" role="tabpanel" hidden>
+      <div class="sec-title">
+        <h2>TikTok, Instagram &amp; social trends</h2>
+        <p id="social-note">There's no free trend API for TikTok or Instagram, so this list is updated by hand.</p>
+      </div>
+      <div class="cards" id="social-cards"></div>
+    </section>
+
+    <!-- Audience -->
+    <section class="page" id="audience" role="tabpanel" hidden>
+      <div class="sec-title">
+        <h2>Who plays Roblox</h2>
+        <p>Age groups on Roblox, the maturity of what's being played right now, and which ideas suit each age group.</p>
+      </div>
+      <div class="split">
+        <div class="card">
+          <h3>Players by age</h3>
+          <p class="note" id="aud-note"></p>
+          <div class="donut-wrap" id="aud-donut"></div>
+        </div>
+        <div class="card">
+          <h3>Maturity of what's played now</h3>
+          <p class="note">Players in the top games by Roblox's content maturity label. Live.</p>
+          <div class="rank" id="aud-maturity"></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Which ages each idea fits</h3>
+        <p class="note">Fit from 1 to 10 per age group (estimate). Stronger color means a better fit.</p>
+        <div class="scroll"><table id="fit-table"></table></div>
+      </div>
+    </section>
+
+    <!-- Ideas -->
+    <section class="page" id="ideas" role="tabpanel" hidden>
+      <div class="sec-title">
+        <h2>Game ideas, scored live</h2>
+        <p>Score = 40% buzz in the idea's genre + 30% room in that genre + 30% audience reach. Buzz and room come from the live Roblox data. Reach weights each age fit by that group's share of players.</p>
+      </div>
+      <div class="card">
+        <div class="scroll"><table class="sortable" id="ideas-table"></table></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Data: Roblox explore and games APIs, Steam charts API (updated automatically every 3 hours). Age split from Roblox's shareholder reports. Social trends and idea fit are reviewed by hand in <code>data/manual.json</code>.</p>
+    </footer>
+  </div>
+  <div class="tip" id="tip" hidden></div>
+  <script src="app.js"></script>
+</body>
+</html>

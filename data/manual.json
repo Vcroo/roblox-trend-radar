@@ -1,0 +1,33 @@
+{
+  "reviewed": "2026-10-19",
+  "note": "Edit this file by hand. TikTok/Instagram trends and Roblox's age split have no free API.",
+  "audience": {
+    "period": "June 2026",
+    "note": "Share of age-checked Roblox players. Only about 57% of daily players had passed an age check.",
+    "dailyUsers": 132000000,
+    "dailyUsersPeriod": "Q1 2026",
+    "groups": [
+      { "group": "under13", "label": "Under 13", "share": 0.35, "likes": "Collecting, pets, bright memes and simple goals." },
+      { "group": "teen", "label": "13 to 17", "share": 0.38, "likes": "The biggest group. Competitive, social and co-op games." },
+      { "group": "adult", "label": "18 and older", "share": 0.27, "likes": "Over a quarter of players. Co-op, horror and cozy games." }
+    ]
+  },
+  "social": [
+    { "trend": "Brainrot clips", "platform": "TikTok / Instagram", "signal": "Biggest Roblox content trend of 2026", "attracts": "Absurd memes, trending audio, chaotic ragdoll moments", "idea": "Meme collectibles, ragdoll chaos, moments built to be clipped" },
+    { "trend": "Friendslop co-op", "platform": "Steam / TikTok", "signal": "366K players at once across the genre (June 2026)", "attracts": "Failing together with friends, proximity voice chat, cheap to join", "idea": "Short co-op rounds with silly physics and voice chat" },
+    { "trend": "Cozy fishing", "platform": "Steam", "signal": "How to Fish peaked at 142K players at once", "attracts": "Relaxing loop, rare catches, collecting", "idea": "Fishing plus rare-catch collection" },
+    { "trend": "Hero shooters", "platform": "TikTok", "signal": "Marvel Rivals is a top gaming hashtag this month", "attracts": "Flashy abilities, team combos, highlight plays", "idea": "Original hero arena with short matches" },
+    { "trend": "Life sims", "platform": "Steam", "signal": "Paralives drew 78K players at once at launch", "attracts": "Building a home, self-expression, story", "idea": "Roleplay town with building and decorating" },
+    { "trend": "Halloween horror", "platform": "TikTok / Roblox", "signal": "Horror games top Roblox's October charts", "attracts": "Jump scares with friends, reaction videos", "idea": "Limited-time horror event or a short co-op horror map" }
+  ],
+  "ideas": [
+    { "idea": "Co-op egg heist (SaM_Eggs twist)", "genre": "Simulation", "fit_under13": 9, "fit_teen": 8, "fit_adult": 4, "effort": "Medium", "why": "Rides Steal An Egg's hype. Team heists set it apart in a crowded niche." },
+    { "idea": "Halloween horror egg event", "genre": "Survival", "fit_under13": 7, "fit_teen": 8, "fit_adult": 5, "effort": "Low", "why": "Seasonal and timely. Quick to add to an existing game." },
+    { "idea": "Roblox friendslop co-op", "genre": "Party & Casual", "fit_under13": 6, "fit_teen": 9, "fit_adult": 8, "effort": "High", "why": "Huge on Steam, still few strong Roblox versions." },
+    { "idea": "Brainrot ragdoll chaos", "genre": "Entertainment", "fit_under13": 9, "fit_teen": 7, "fit_adult": 3, "effort": "Low", "why": "Made for TikTok clips, but many games already chase it." },
+    { "idea": "Cozy fishing collection", "genre": "Simulation", "fit_under13": 7, "fit_teen": 6, "fit_adult": 7, "effort": "Medium", "why": "Proven on Steam and Roblox. Appeals to every age group." },
+    { "idea": "Original hero arena", "genre": "Action", "fit_under13": 6, "fit_teen": 9, "fit_adult": 6, "effort": "High", "why": "Follows the hero-shooter buzz with your own heroes." },
+    { "idea": "Sports anime game", "genre": "Sports & Racing", "fit_under13": 5, "fit_teen": 9, "fit_adult": 5, "effort": "High", "why": "Strong teen audience. Needs good feel and balance." },
+    { "idea": "Roleplay town with building", "genre": "Roleplay & Avatar Sim", "fit_under13": 8, "fit_teen": 7, "fit_adult": 5, "effort": "High", "why": "Huge genre, but Brookhaven dominates it." }
+  ]
+}
